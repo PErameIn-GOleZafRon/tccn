@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Crypto Tycoon</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    <div class="container">
+        <h1 class="neon">Neon Crypto Tycoon</h1>
+        
+        <div class="progress-bar">
+            <div class="progress-fill" id="energyBar"></div>
+        </div>
+        
+        <div class="status">
+            <p><span class="status-label">Energy:</span> <span class="status-value" id="energy">100</span></p>
+            <p><span class="status-label">Money:</span> <span class="status-value">$<span id="money">500</span></span></p>
+            <p><span class="status-label">Crypto/Second:</span> <span class="status-value" id="cryptoPerSecond">1</span></p>
+            <p><span class="status-label">Data Centers:</span> <span class="status-value" id="dataCenters">1</span></p>
+            <p><span class="status-label">Energy Regen:</span> <span class="status-value" id="energyRegenLevel">1</span></p>
+            <p><span class="status-label">Defense:</span> <span class="status-value" id="defense">0</span></p>
+            <p><span class="status-label">Rebirths:</span> <span class="status-value" id="rebirths">0</span></p>
+            <p><span class="status-label">Rebirth Bonus:</span> <span class="status-value" id="rebirthBonus">0</span>%</p>
+            <p><span class="status-label">Total Bonus:</span> <span class="status-value" id="totalRebirthBonus">0</span>%</p>
+        </div>
+        
+        <div class="controls">
+            <button class="button" id="mineButton" onclick="game.mineCrypto()">Mine Crypto (Cost: 1 Energy)</button>
+            <button class="button" id="energyRegenButton" onclick="game.upgradeEnergyRegen()">Upgrade Energy Regen</button>
+            <button class="button" id="rebirthButton" onclick="game.rebirth()">Rebirth</button>
+        </div>
+        
+        <div class="tabs">
+            <div class="tab active" onclick="ui.showUpgrades('production')">Production</div>
+            <div class="tab" onclick="ui.showUpgrades('energy')">Energy</div>
+            <div class="tab" onclick="ui.showUpgrades('defense')">Defense</div>
+            <div class="tab" onclick="ui.showUpgrades('special')">Special</div>
+            <div class="tab" onclick="ui.showUpgrades('achievements')">Achievements</div>
+        </div>
+        
+        <div id="production" class="upgrades active">
+            <!-- Production upgrades will be generated dynamically -->
+        </div>
+        
+        <div id="energy" class="upgrades">
+            <!-- Energy upgrades will be generated dynamically -->
+        </div>
+        
+        <div id="defense" class="upgrades">
+            <!-- Defense upgrades will be generated dynamically -->
+        </div>
+        
+        <div id="special" class="upgrades">
+            <!-- Special upgrades will be generated dynamically -->
+        </div>
+        
+        <div id="achievements" class="upgrades">
+            <!-- Achievements will be generated dynamically -->
+        </div>
+        
+        <div class="log" id="log"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
